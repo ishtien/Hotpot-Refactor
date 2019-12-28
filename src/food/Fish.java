@@ -4,7 +4,7 @@ import resource.GetResource;
 
 import javax.swing.ImageIcon;
 
-public class Fish implements Food{
+public class Fish extends ConcreteFood{
 	private static ImageIcon icons[] = 
 		{
 			GetResource.createImage("raw_fish.png", 100, 100),
@@ -13,47 +13,14 @@ public class Fish implements Food{
 		};
 	private static ImageIcon iconUI = GetResource.createImage("fish.png", 100, 100);
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
-	private Food sauce = null;
-
-	public ImageIcon getIconInUI()
-	{
-		return iconUI;
-	}
+	private static Food sauce = null;
+	private static String name = "魚肉";
+	private static int cal = 25;
+	private static int gram = 20;
+	private static int price = 120;
 	
-	public ImageIcon getIconInHotpot(int index)
-	{
-		if (index > 2)
-			return getIconInHotpot(2);
-		else if (index < 0)
-			return getIconInHotpot(0);
-		return icons[index];
+	public Fish() {
+		super(icons, iconUI, transferState, sauce, name, cal, gram, price);
 	}
-	public String getName()
-	{
-		return "魚肉";
-	}
-	public int getTime(int nowState)
-	{
-		if (nowState < 0)
-			return getTime(nowState);
-		else if (nowState > 2)
-			return getTime(2);
-		return transferState[nowState];
-	}
-	public int getCal()
-	{
-		return 25;
-	}
-	public int getGram()
-	{
-		return 20;
-	}
-	public int getPrice()
-	{
-		return 12;
-	}
-	public Food getSauce() 
-	{
-		return sauce;
-	}
+
 }
