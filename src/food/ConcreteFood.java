@@ -5,8 +5,6 @@ import javax.swing.ImageIcon;
 import resource.GetResource;
 
 public class ConcreteFood implements Food{
-
-	
 	private ImageIcon icons[];
 	private ImageIcon iconUI;
 	private int transferState[];
