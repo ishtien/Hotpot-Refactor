@@ -1,16 +1,17 @@
-package hotpot;
+package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import resource.GetResource;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-
-import resource.GetResource;
 
 @SuppressWarnings("serial")
 public class ResultUI extends JFrame {

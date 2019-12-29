@@ -1,4 +1,4 @@
-package hotpot;
+package ui;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class UIObject<T extends JComponent> {
+public class GameUI<T extends JComponent> {
 	private T compoent;
 	private int targetX, targetY, intervel;
 	private boolean disposeAfterMove;
@@ -55,7 +55,7 @@ public class UIObject<T extends JComponent> {
 		compoent.setLocation(targetX, targetY);
 		moveThread = null;
 	}
-	public UIObject<T> moveTo(int X, int Y, int millis, boolean disposeAfterMove)
+	public GameUI<T> moveTo(int X, int Y, int millis, boolean disposeAfterMove)
 	{
 		if (moveThread != null)
 		{
@@ -78,14 +78,14 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<?> moveTo(UIObject<?> obj, int millis, boolean disposeAfterMove)
+	public GameUI<?> moveTo(GameUI<?> obj, int millis, boolean disposeAfterMove)
 	{
 		Point location = obj.compoent.getLocationOnScreen();
 		Dimension dimension = obj.compoent.getSize();
 		return moveTo(location.x + dimension.width / 4, location.y + 10, millis, disposeAfterMove);
 	}
 	
-	public UIObject(T obj)
+	public GameUI(T obj)
 	{
 		compoent = obj;
 	}
@@ -96,19 +96,19 @@ public class UIObject<T extends JComponent> {
 	}
 	
 
-	public UIObject<T> setBorder(EmptyBorder border)
+	public GameUI<T> setBorder(EmptyBorder border)
 	{
 		compoent.setBorder(border);
 		return this;
 	}
 	
-	public UIObject<T> setBounds(int x, int y, int width, int height)
+	public GameUI<T> setBounds(int x, int y, int width, int height)
 	{
 		compoent.setBounds(x, y, width, height);
 		return this;
 	}
 	
-	public UIObject<T> addActionListener(ActionListener listener)
+	public GameUI<T> addActionListener(ActionListener listener)
 	{
 		try
 		{
@@ -123,7 +123,7 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<T> setIcon(ImageIcon icon)
+	public GameUI<T> setIcon(ImageIcon icon)
 	{
 		try
 		{
@@ -140,7 +140,7 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<T> setLayout(LayoutManager mgr)
+	public GameUI<T> setLayout(LayoutManager mgr)
 	{
 		try
 		{
@@ -155,7 +155,7 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<T> add(Component comp)
+	public GameUI<T> add(Component comp)
 	{
 		try
 		{
@@ -170,14 +170,14 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<T> refreshUI()
+	public GameUI<T> refreshUI()
 	{
 		compoent.invalidate();
 		compoent.repaint();
 		return this;
 	}
 	
-	public UIObject<T> add(UIObject<?> obj, int index_Z_Order)
+	public GameUI<T> add(GameUI<?> obj, int index_Z_Order)
 	{
 		try
 		{
@@ -192,7 +192,7 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<T> add(UIObject<?> obj)
+	public GameUI<T> add(GameUI<?> obj)
 	{
 		try
 		{
@@ -207,7 +207,7 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<T> add(UIObject<?> obj, String str)
+	public GameUI<T> add(GameUI<?> obj, String str)
 	{
 		try
 		{
@@ -222,26 +222,26 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 
-	public UIObject<T> setTag(String Key, Integer ID)
+	public GameUI<T> setTag(String Key, Integer ID)
 	{
 		compoent.putClientProperty(Key, ID);
 		return this;
 	}
 	
-	public UIObject<T> setTag(String Key, UIObject<T> obj)
+	public GameUI<T> setTag(String Key, GameUI<T> obj)
 	{
 		compoent.putClientProperty(Key, obj);
 		return this;
 	}
 	
-	public UIObject<T> setToolTipText(String text)
+	public GameUI<T> setToolTipText(String text)
 	{
 		compoent.setToolTipText(text);
 		return this;
 	}
 
 	
-	public UIObject<T> setText(String text)
+	public GameUI<T> setText(String text)
 	{
 		try
 		{
@@ -256,25 +256,25 @@ public class UIObject<T extends JComponent> {
 		return this;
 	}
 	
-	public UIObject<T> setSize(int width, int height)
+	public GameUI<T> setSize(int width, int height)
 	{
 		compoent.setSize(width, height);
 		return this;
 	}
 	
-	public UIObject<T> setBackground(Color bg)
+	public GameUI<T> setBackground(Color bg)
 	{
 		compoent.setBackground(bg);
 		return this;
 	}
 	
-	public UIObject<T> setVisible(boolean isVisible)
+	public GameUI<T> setVisible(boolean isVisible)
 	{
 		compoent.setVisible(isVisible);
 		return this;
 	}
 	
-	public UIObject<T> setTransparent()
+	public GameUI<T> setTransparent()
 	{
 		compoent.setOpaque(false);
 		if (compoent.getClass() == JButton.class)
@@ -294,18 +294,18 @@ public class UIObject<T extends JComponent> {
 		compoent = null;
 	}
 	
-	public static UIObject<JButton> createButton(ImageIcon image)
+	public static GameUI<JButton> createButton(ImageIcon image)
 	{
-		return new UIObject<JButton>(new JButton(image)); 
+		return new GameUI<JButton>(new JButton(image)); 
 	}
 	
-	public static UIObject<JPanel> createPanel()
+	public static GameUI<JPanel> createPanel()
 	{
-		return new UIObject<>(new JPanel());
+		return new GameUI<>(new JPanel());
 	}
 	
-	public static UIObject<JLabel> createLabel(ImageIcon image)
+	public static GameUI<JLabel> createLabel(ImageIcon image)
 	{
-		return new UIObject<JLabel>(new JLabel(image)); 
+		return new GameUI<JLabel>(new JLabel(image)); 
 	}
 }

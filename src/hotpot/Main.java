@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import resource.GetResource;
+import ui.StartGameUI;
 
 public class Main {
 	
@@ -26,7 +27,7 @@ public class Main {
 		}
 		
 		//Create UI
-		StartGameUI menuUI = new StartGameUI(lanDeviceSearch);
+		StartGameUI startGameUI = new StartGameUI(lanDeviceSearch);
 	}
 
 }

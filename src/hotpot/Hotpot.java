@@ -25,30 +25,33 @@ import network.Packet;
 import network.TakeFoodFromHotpot;
 import network.TellNamePacket;
 import resource.GetResource;
+import ui.GameUI;
+import ui.ResultUI;
 
 import static resource.GetResource.hotpotWidth;
 import static resource.GetResource.hotpotHeight;
 
 public class Hotpot {
+	static ResultUI Rframe;
 	private Socket socket;
 	private InputStream inputStream;
 	private OutputStream outputStream;
 	private byte userID;
 	private JFrame frame;
-	private ArrayList<UIObject<JButton>> foodUIButtonList = new ArrayList<>();
+	private ArrayList<GameUI<JButton>> foodUIButtonList = new ArrayList<>();
 	//Food food = foodInterfaceList.get(index)
 	private ArrayList<Food> foodInterfaceList = new ArrayList<>();
 	@SuppressWarnings("unchecked")
-	private UIObject<JLabel> foodPlateButtonList[] = new UIObject[5];
+	private GameUI<JLabel> foodPlateButtonList[] = new GameUI[5];
 	private boolean isPlateHasFood[] = new boolean[5];
 	private int plateFoodCookTime[] = new int[5];
 	@SuppressWarnings("unchecked")
-	private UIObject<JLabel> otherPlayerPart[] = new UIObject[GameStatus.playerMaxCount - 1];
+	private GameUI<JLabel> otherPlayerPart[] = new GameUI[GameStatus.playerMaxCount - 1];
 	private GameStatus status = new GameStatus(this);
 	private int Width = 1280, Height = 720;
 
 	@SuppressWarnings("unchecked")
-	private UIObject<JButton> hotpotButton[] = new UIObject[GameStatus.roomInHotpot];
+	private GameUI<JButton> hotpotButton[] = new GameUI[GameStatus.roomInHotpot];
 	private int hotpotFoodStatus[] = new int[GameStatus.roomInHotpot];
 	private GameResult result = new GameResult();
 	private double positionHotpot[][] = 
@@ -79,8 +82,8 @@ public class Hotpot {
 			Ricecake.class,
 			Wurst.class
 	};
-	private UIObject<JPanel> allPanel;
-	private UIObject<JPanel> contentPane;
+	private GameUI<JPanel> allPanel;
+	private GameUI<JPanel> contentPane;
 	
 	private ActionListener addFoodListener;
 	private void createFoodButtonListener()
@@ -204,15 +207,8 @@ public class Hotpot {
 		}).start();
 		return this;
 	}
-	static ResultUI Rframe;
-	class ExitAdapter extends WindowAdapter {
-	    public void windowClosing(WindowEvent e) {
-	    	Rframe = new ResultUI(result.getSumCal(),result.getSumPrice(),result.getNickname(),result.getFoodMost(0),result.getFoodMost(1),result.getFoodMost(2));
-	    	Rframe.setLocation(50, 50);
-	        Rframe.setVisible(true);
-	        frame.setVisible(false);
-	   }
-	}
+	
+	
 	
 	private Hotpot createUI() throws Exception
 	{
@@ -220,17 +216,17 @@ public class Hotpot {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.setBounds(0, 0, Width, Height);
-		frame.addWindowListener(new ExitAdapter());
+		frame.addWindowListener(new ExitAdapter(frame, result, Rframe));
 		
 		//Left Upper Part
-		UIObject<JPanel> panel_LeftUp = UIObject.createPanel()
+		GameUI<JPanel> panel_LeftUp = GameUI.createPanel()
 			.setBackground(new Color(255, 228, 181))
 			.setBounds(0, 0, Width_1_10 * 8, Height_1_10 * 7)
 			.setLayout(null);
 		int otherPlayerLabelWidth = Width_1_10 * 8 / (otherPlayerPart.length);
 		for (int i = 0; i < otherPlayerPart.length; ++i)
 		{
-			otherPlayerPart[i] = UIObject
+			otherPlayerPart[i] = GameUI
 					.createLabel(null)
 					.setText("")
 					.setVisible(false)
@@ -245,12 +241,12 @@ public class Hotpot {
 			positionHotpot[i][0] = positionHotpot[i][0] * PotImageSize * 2 + PotWidthDiff / 2;
 			positionHotpot[i][1] = positionHotpot[i][1] * PotImageSize * 1 + PotHeightDiff / 2;
 		}
-		UIObject<JLabel> hotpotLabel = UIObject.createLabel(hotpotIcon)
+		GameUI<JLabel> hotpotLabel = GameUI.createLabel(hotpotIcon)
 				.setBounds(PotWidthDiff / 2, PotHeightDiff / 2, PotImageSize * 2, PotImageSize);
 		panel_LeftUp.add(hotpotLabel);
 		
 		//Left Below Part
-		UIObject<JPanel> panel_LeftDown = UIObject.createPanel()
+		GameUI<JPanel> panel_LeftDown = GameUI.createPanel()
 			.setBackground(new Color(255, 160, 122))
 			.setBounds(0, Height_1_10 * 7, Width_1_10 * 8, Height - Height_1_10 * 7)
 			.setLayout(null);
@@ -261,14 +257,14 @@ public class Hotpot {
 		for (int i = 0; i < foodPlateButtonList.length; ++i)
 		{
 			foodPlateButtonList[i] = 
-					UIObject.createLabel(dishIcon)
+					GameUI.createLabel(dishIcon)
 					.setBounds(plateButtonWidth * i, 0, plateButtonWidth, plateButtonHeight)
 					.setTransparent();
 			panel_LeftDown.add(foodPlateButtonList[i]);
 		}
 		
 		//Right Part
-		UIObject<JPanel> panelRight = UIObject.createPanel()
+		GameUI<JPanel> panelRight = GameUI.createPanel()
 				.setBackground(new Color(255, 69, 0))
 				.setBounds(Width_1_10 * 8, 0, Width - Width_1_10 * 8, Height);
 		
@@ -278,8 +274,8 @@ public class Hotpot {
 		for (int i = 0; i < foodClass.length; ++i)
 		{
 			Food food = (Food)foodClass[i].newInstance();
-			UIObject<JButton> button = 
-					UIObject.createButton(GetResource.resizeImage(food.getIconInUI(), buttonSize, buttonSize))
+			GameUI<JButton> button = 
+					GameUI.createButton(GetResource.resizeImage(food.getIconInUI(), buttonSize, buttonSize))
 					.setTag("ID", new Integer(i))
 					.setTransparent()
 					.setToolTipText(food.getName())
@@ -289,14 +285,14 @@ public class Hotpot {
 			foodInterfaceList.add(food);
 		}
 		
-		allPanel = UIObject.createPanel()
+		allPanel = GameUI.createPanel()
 				.setBounds(0, 0, Width, Height)
 				.setLayout(null)
 				.add(panel_LeftUp)
 				.add(panel_LeftDown)
 				.add(panelRight);
 		
-		contentPane = UIObject.createPanel()
+		contentPane = GameUI.createPanel()
 			.setBackground(new Color(255, 255, 255))
 			.setBorder(new EmptyBorder(5, 5, 5, 5))
 			.setLayout(null)
@@ -393,9 +389,9 @@ public class Hotpot {
 		if (takeFoodListener == null)
 			createTakeFoodButtonListener();
 		Food foodObj = foodInterfaceList.get(foodID);
-		UIObject<JButton> foodBtn = foodUIButtonList.get(foodID);
+		GameUI<JButton> foodBtn = foodUIButtonList.get(foodID);
 		Point btnLocation = foodBtn.getObject().getLocationOnScreen();
-		UIObject<JButton> btn = UIObject
+		GameUI<JButton> btn = GameUI
 			.createButton(foodObj.getIconInHotpot(0))
 			.setBounds(btnLocation.x, btnLocation.y, 100, 100)
 			.setTransparent()
@@ -419,7 +415,7 @@ public class Hotpot {
 			Integer roomID = (Integer)btn.getClientProperty("RoomID");
 			Integer foodID = (Integer)btn.getClientProperty("FoodID");
 			Integer cookedTime = (Integer)btn.getClientProperty("CookedTime");
-			UIObject<JButton> btnObj = (UIObject<JButton>)btn.getClientProperty("UIObject");
+			GameUI<JButton> btnObj = (GameUI<JButton>)btn.getClientProperty("UIObject");
 			isPlateHasFood[roomID.intValue()] = false;
 			btnObj.dispose();
 			Food food = foodInterfaceList.get(foodID);
@@ -451,7 +447,7 @@ public class Hotpot {
 		
 		if (eatFoodListener == null)
 			createEatFoodButtonListener();
-		UIObject<JButton> btnEatFood = UIObject
+		GameUI<JButton> btnEatFood = GameUI
 			.createButton((ImageIcon)(hotpotButton[roomID].getObject().getIcon()))
 			.addActionListener(eatFoodListener)
 			.setBounds(0, 0, 100, 100)
