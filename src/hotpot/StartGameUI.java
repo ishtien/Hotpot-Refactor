@@ -1,4 +1,4 @@
-package ui;
+package hotpot;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -8,8 +8,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import hotpot.Hotpot;
-import hotpot.LanDeviceSearch;
 import resource.GetResource;
 
 public class StartGameUI {

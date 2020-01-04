@@ -4,7 +4,7 @@ import resource.GetResource;
 
 import javax.swing.ImageIcon;
 
-public class Wurst extends ConcreteFood{
+public class Wurst extends FoodConcrete{
 	private static ImageIcon icons[] = 
 		{
 			GetResource.createImage("raw_wurst.png", 100, 100),

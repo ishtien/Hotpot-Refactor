@@ -1,5 +1,7 @@
 package hotpot;
 
+import java.util.Dictionary;
+
 public class GameResult {
 	private int sumCal;
 	private int sumPrice;

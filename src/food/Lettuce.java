@@ -4,7 +4,7 @@ import resource.GetResource;
 
 import javax.swing.ImageIcon;
 
-public class Lettuce extends ConcreteFood{
+public class Lettuce extends FoodConcrete{
 	private static ImageIcon icons[] = 
 		{
 			GetResource.createImage("raw_lettuce.png", 100, 100),

@@ -4,7 +4,7 @@ import resource.GetResource;
 
 import javax.swing.ImageIcon;
 
-public class Mushroom extends ConcreteFood{
+public class Mushroom extends FoodConcrete{
 	private static ImageIcon icons[] = 
 		{
 			GetResource.createImage("raw_mushroom.png", 100, 100),

@@ -4,7 +4,7 @@ import resource.GetResource;
 
 import javax.swing.ImageIcon;
 
-public class Eggdump extends ConcreteFood{
+public class Eggdump extends FoodConcrete{
 	private static ImageIcon icons[] = 
 		{
 			GetResource.createImage("raw_eggdump.png", 100, 100),

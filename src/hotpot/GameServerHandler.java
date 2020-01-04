@@ -36,7 +36,7 @@ public class GameServerHandler {
 			    	insertSocket(sock);
 	    		}catch (Exception e)
 	    		{
-	    			
+	    			e.printStackTrace();
 	    		}
 	    	}
 	    }).start();

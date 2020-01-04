@@ -4,7 +4,7 @@ import resource.GetResource;
 
 import javax.swing.ImageIcon;
 
-public class Beef extends ConcreteFood{
+public class Beef extends FoodConcrete{
 	private static ImageIcon icons[] = 
 		{
 			GetResource.createImage("raw_beef.png", 100, 100),
@@ -22,7 +22,6 @@ public class Beef extends ConcreteFood{
 	
 	public Beef() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);
-		System.out.println("牛肉");
 	}
 
 }

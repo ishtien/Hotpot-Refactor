@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 import resource.GetResource;
 
-public class ConcreteFood implements Food{
+public class FoodConcrete implements Food{
 	private ImageIcon icons[];
 	private ImageIcon iconUI;
 	private int transferState[];
@@ -15,7 +15,7 @@ public class ConcreteFood implements Food{
 	private int gram;
 	private int price;
 	
-	public ConcreteFood(ImageIcon ICONS[], ImageIcon ICON_UI, int TRANSFER_STATE[],Food SAUCE, String NAME, int CAL, int GRAM, int PRICE) {
+	public FoodConcrete(ImageIcon ICONS[], ImageIcon ICON_UI, int TRANSFER_STATE[],Food SAUCE, String NAME, int CAL, int GRAM, int PRICE) {
 		icons = ICONS;
 		iconUI = ICON_UI;
 		transferState = TRANSFER_STATE;
