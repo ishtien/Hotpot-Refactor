@@ -14,18 +14,18 @@ public class LanDeviceSearch {
 	private Thread receiveThread;
 	private String serverAddress = null;
 	
-	protected void finalize() throws Throwable {
-		startScanDevice = false;
-		socket.close();
-	    super.finalize();
-	}
-
 	public LanDeviceSearch(int port) throws Exception
 	{
 		socket = new DatagramSocket(port);
         socket.setBroadcast(true);
         socket.setSoTimeout(1000);
 		this.port = port;
+	}
+	
+	protected void finalize() throws Throwable {
+		startScanDevice = false;
+		socket.close();
+	    super.finalize();
 	}
 	
     public void BroadcastMessage(byte[] message)

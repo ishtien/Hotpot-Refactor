@@ -15,39 +15,47 @@ import resource.GetResource;
 public class StartGameUI {
 	Hotpot hotpot;
 	boolean isStartScanning = false;
+	private JFrame frame = new JFrame();
+	private GameUI<JPanel> startPane;
+	private GameUI<JLabel> nameTitle;
+	private GameUI<JLabel> background;
+	private GameUI<JTextField> textTitle;
+	private GameUI<JButton> searchButton;
 
 	public StartGameUI(LanDeviceSearch lanDeviceSearch) {
 		// TODO Auto-generated constructor stub
-		JFrame frame = new JFrame();
-		frame.setSize(400, 400); 
+		frame.setSize(410, 430); 
 		frame.setTitle("Config");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 400, 300);
-		panel.setLayout(null);
-		panel.setBorder(null);
 		
-		JLabel labelTitle = new JLabel("Your Name");
-		labelTitle.setBounds(0, 300, 400, 20);
-		JTextField textTitle = new JTextField("");
-		textTitle.setBounds(0, 320, 400, 20);
-		JButton button = new JButton("Search other outsider");
-		button.setBounds(0, 350, 400, 25);
-		textTitle.setToolTipText("Enter Your Name Here");
 		
-		JLabel background = new JLabel("");
-		ImageIcon backIcon=GetResource.createImage("start.png", 400,300);
-		background.setIcon(backIcon);
-		background.setBounds(0, 0, 400, 300);
-		background.setBorder(null);
-		panel.add(background);
+		startPane = GameUI.createPanel()
+			.setBounds(0, 0, 400, 300)
+			.setLayout(null)
+			.setBorder(null);
+
+		nameTitle = GameUI.createLabelString("Your Name")
+				.setBounds(0, 300, 400, 20);
 		
-		button.addActionListener(e -> 
+		textTitle = GameUI.createTextField("")
+				.setBounds(0, 320, 400, 20)
+				.setToolTipText("Enter Your Name Here");
+		
+		searchButton = GameUI.createButtonString("Search other outsider")
+				.setBounds(0, 350, 400, 25);
+		
+		background = GameUI.createLabel(GetResource.createImage("start.png", 400,300))
+				.setBounds(0, 0, 400, 300)
+				.setBorder(null);
+		
+		startPane.add(background);
+		
+		searchButton.addActionListener(e -> 
 		{
-			button.setEnabled(false);
+			searchButton.getObject().setEnabled(false);
 			if (isStartScanning)
 				return;
-			if (textTitle.getText().length() <= 0)
+			if (textTitle.getObject().getText().length() <= 0)
 			{
 				JOptionPane.showConfirmDialog(
 						null,
@@ -57,7 +65,7 @@ public class StartGameUI {
 						JOptionPane.QUESTION_MESSAGE,
 						null
 						);
-				button.setEnabled(true);
+				searchButton.getObject().setEnabled(true);
 				return;
 			}
 			isStartScanning = true;
@@ -68,19 +76,19 @@ public class StartGameUI {
 				return;
 			frame.setVisible(false);
 			if (lanDeviceSearch.isReceiveUdp())
-				hotpot = new Hotpot(textTitle.getText().toString(), lanDeviceSearch.popServerIP());
+				hotpot = new Hotpot(textTitle.getObject().getText().toString(), lanDeviceSearch.popServerIP());
 			else
 			{
-				hotpot = new Hotpot(textTitle.getText().toString());
+				hotpot = new Hotpot(textTitle.getObject().getText().toString());
 				lanDeviceSearch.autoBroadcast(new byte[]{0}, new Integer(100));
 			}
 			
 		});
 		
-		frame.add(panel);
-		panel.add(labelTitle);
-		panel.add(textTitle);
-		panel.add(button);
+		frame.add(startPane.getObject());
+		startPane.add(nameTitle);
+		startPane.add(textTitle);
+		startPane.add(searchButton);
 		frame.setVisible(true);
 	}
 

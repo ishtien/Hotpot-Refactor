@@ -15,74 +15,85 @@ import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class ResultUI extends JFrame {
-	private JPanel contentPane;
+//	private JPanel contentPane;
+	@SuppressWarnings("unchecked")
+	private GameUI<JLabel> rankListImg[] = new GameUI[3];
+	private GameUI<JLabel> rankListString[] = new GameUI[3];
+	private GameUI<JPanel> contentPane;
+	private GameUI<JPanel> backgroundPane;
+	private GameUI<JLabel> nickName;
+	private GameUI<JLabel> calInfo;
+	private GameUI<JLabel> priceInfo;
+	private GameUI<JLabel> hungerIcon;
 
 	public ResultUI() {}
 	public ResultUI(int cal,int price, String nickname, String rankImg1,String rankImg2,String rankImg3) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		contentPane = GameUI.createPanel()
+				.setBorder(new EmptyBorder(5, 5, 5, 5))
+				.setBounds(100, 100, 800, 600)
+				.setLayout(new BorderLayout(0, 0))
+				.setLayout(null);
+
+		setContentPane(contentPane.getObject());
+
+		backgroundPane = GameUI.createPanel()
+				.setBackground(new Color(254,244,173))
+				.setBounds(0, 0, 800, 600)
+				.setLayout(null);
+		contentPane.add(backgroundPane, BorderLayout.CENTER);
+
+		nickName = GameUI.createLabelString(nickname)
+				.setFont("微軟正黑體")
+				.setBounds(302, 34, 329, 85);
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(null);
+		backgroundPane.add(nickName);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(254,244,173));
-		panel_1.setBounds(0, 0, 800, 600);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
+		calInfo = GameUI.createLabelString("你今天總共吃了"+cal+"Kcal的食物")
+				.setFont("新細明體")
+				.setBounds(100, 187, 388, 54);
+
+		backgroundPane.add(calInfo);
 		
-		JLabel Nickname = new JLabel(nickname);
-		Nickname.setFont(new Font("微軟正黑體", Font.PLAIN, 48));
-		Nickname.setBounds(302, 34, 329, 85);
-		panel_1.add(Nickname);
+		priceInfo = GameUI.createLabelString("你花了"+price+"元吃了這一餐")
+				.setFont("新細明體")
+				.setBounds(100, 249, 272, 43);
+
+		backgroundPane.add(priceInfo);
 		
-		JLabel calTitle = new JLabel("你今天總共吃了"+cal+"Kcal的食物");
-		calTitle.setFont(new Font("新細明體", Font.PLAIN, 20));
-		calTitle.setBounds(100, 187, 388, 54);
-		panel_1.add(calTitle);
-		
-		JLabel PriceTitle = new JLabel("你花了"+price+"元吃了這一餐");
-		PriceTitle.setFont(new Font("新細明體", Font.PLAIN, 20));
-		PriceTitle.setBounds(100, 249, 272, 43);
-		panel_1.add(PriceTitle);
-		
-		
-		ImageIcon hungerIcon = null;
-		if(cal>=1500) {
-			hungerIcon=GetResource.createImage("good.png", 312,234);
-		}else if(cal<1500 && cal>=800) {
-			hungerIcon=GetResource.createImage("ok.png", 312,234);
-		}else {			
-			hungerIcon=GetResource.createImage("bad.png", 312,234);
+		if(cal >=1500) {
+			hungerIcon = GameUI.createLabel(GetResource.createImage("good.png", 312,234));
+		} else if(cal<1500 && cal>=800) {
+			hungerIcon = GameUI.createLabel(GetResource.createImage("ok.png", 312,234));
+		}else {
+			hungerIcon = GameUI.createLabel(GetResource.createImage("bad.png", 312,234));
 		}
 		
-		JLabel hunger = new JLabel("hunger");
-		hunger.setIcon(hungerIcon);
-		hunger.setBounds(400, 140, 310, 235);
-		panel_1.add(hunger);
+		hungerIcon.setBounds(400, 140, 312,234);
+		backgroundPane.add(hungerIcon);
 		
-		JLabel rank1 = new JLabel("吃最多的生食!");
-		ImageIcon rankIcon1=GetResource.createImage(rankImg1, 50,50);
-		rank1.setIcon(rankIcon1);
-		rank1.setBounds(60, 385, 200, 165);
-		panel_1.add(rank1);
+		rankListImg[0] = GameUI.createLabel(GetResource.createImage(rankImg1, 50,50))
+				.setBounds(70, 430, 50, 50);
+		rankListImg[1] = GameUI.createLabel(GetResource.createImage(rankImg2, 50,50))
+				.setBounds(320, 430, 50, 50);
+		rankListImg[2] = GameUI.createLabel(GetResource.createImage(rankImg3, 50,50))
+				.setBounds(570, 430, 50, 50);
+		backgroundPane.add(rankListImg[0]);
+		backgroundPane.add(rankListImg[1]);
+		backgroundPane.add(rankListImg[2]);
 		
-		JLabel rank2 = new JLabel("吃最多將將好的食物！");
-		ImageIcon rankIcon2=GetResource.createImage(rankImg2, 50,50);
-		rank2.setIcon(rankIcon2);
-		rank2.setBounds(310, 385, 200, 165);
-		panel_1.add(rank2);
 		
-		JLabel rank3 = new JLabel("吃這些會生病吧！");
-		ImageIcon rankIcon3=GetResource.createImage(rankImg3, 50,50);
-		rank3.setIcon(rankIcon3);
-		rank3.setBounds(560, 385, 200, 165);
-		panel_1.add(rank3);
+		rankListString[0] = GameUI.createLabelString("吃最多的生食!")
+				.setBounds(60, 385, 100, 50);
+		rankListString[1] = GameUI.createLabelString("吃最多將將好的食物！")
+				.setBounds(310, 385, 100, 50);
+		rankListString[2] = GameUI.createLabelString("吃這些會生病吧！")
+				.setBounds(560, 385, 100, 50);
+		backgroundPane.add(rankListString[0]);
+		backgroundPane.add(rankListString[1]);
+		backgroundPane.add(rankListString[2]);
+
 	}
 
 }

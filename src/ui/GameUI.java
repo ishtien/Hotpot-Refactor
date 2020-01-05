@@ -4,15 +4,19 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.LayoutManager;
 import java.awt.Point;
+import java.awt.Window;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class GameUI<T extends JComponent> {
@@ -262,6 +266,15 @@ public class GameUI<T extends JComponent> {
 		return this;
 	}
 	
+	public GameUI<T> setFont(String font)
+	{
+		if(font == "微軟正黑體")
+			compoent.setFont(new Font(font, Font.PLAIN, 48));
+		else 
+			compoent.setFont(new Font(font, Font.PLAIN, 20));
+		return this;
+	}
+	
 	public GameUI<T> setBackground(Color bg)
 	{
 		compoent.setBackground(bg);
@@ -299,6 +312,16 @@ public class GameUI<T extends JComponent> {
 		return new GameUI<JButton>(new JButton(image)); 
 	}
 	
+	public static GameUI<JButton> createButtonString(String string)
+	{
+		return new GameUI<JButton>(new JButton(string)); 
+	}
+	
+	public static GameUI<JTextField> createTextField(String string)
+	{
+		return new GameUI<JTextField>(new JTextField(string)); 
+	}
+	
 	public static GameUI<JPanel> createPanel()
 	{
 		return new GameUI<>(new JPanel());
@@ -308,4 +331,10 @@ public class GameUI<T extends JComponent> {
 	{
 		return new GameUI<JLabel>(new JLabel(image)); 
 	}
+	
+	public static GameUI<JLabel> createLabelString(String string)
+	{
+		return new GameUI<JLabel>(new JLabel(string)); 
+	}
+	
 }

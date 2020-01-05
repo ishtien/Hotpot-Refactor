@@ -14,6 +14,11 @@ public class GameStatus {
 		this.hotpot = hotpot;
 	}
 	
+	public String getPlayerName(int userID)
+	{
+		return otherPlayersName[userID];
+	}
+	
 	public boolean checkIsCooking(int index)
 	{
 		if (index < 0)
@@ -21,6 +26,14 @@ public class GameStatus {
 		else if (index >= roomInHotpot)
 			return false;
 		return isCooking[index];
+	}
+	
+	public long getHotpotItemCookTime(int index)
+	{
+		if (checkIsCooking(index))
+			return System.currentTimeMillis() - cookTimeArray[index];
+		else
+			return -1;
 	}
 	
 	synchronized public int getFreeRoomInHotpot()
@@ -35,14 +48,6 @@ public class GameStatus {
 	{
 		if (checkIsCooking(index))
 			return cookItemIDArray[index];
-		else
-			return -1;
-	}
-	
-	public long getHotpotItemCookTime(int index)
-	{
-		if (checkIsCooking(index))
-			return System.currentTimeMillis() - cookTimeArray[index];
 		else
 			return -1;
 	}
@@ -84,8 +89,5 @@ public class GameStatus {
 			hotpot.addNewPlayer(userID, name);
 	}
 	
-	public String getPlayerName(int userID)
-	{
-		return otherPlayersName[userID];
-	}
+	
 }

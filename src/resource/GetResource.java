@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 
 public class GetResource {
 	
+	public static double hotpotWidth = 239, hotpotHeight = 190;
 	public static URL getResource(String fileName)
 	{
 		return GetResource.class.getResource(fileName);
@@ -27,5 +28,5 @@ public class GetResource {
 	{
 		return new ImageIcon(icon.getImage().getScaledInstance(resizeWidth, resizeHeight, Image.SCALE_DEFAULT));
 	}
-	public static double hotpotWidth = 239, hotpotHeight = 190;
+	
 }

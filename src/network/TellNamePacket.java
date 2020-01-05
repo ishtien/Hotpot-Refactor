@@ -8,7 +8,6 @@ public class TellNamePacket implements Packet {
 	private static final int indexLengthLow = 3;
 	private static final int indexLengthHigh = 4;
 	//00 Type UserID Length_Low Length_High StrBytes 00
-
 	private static final byte[] packetTemplate = {0, ID, 0, 0, 0};
 	private byte[] packet;
 	private String playerName;

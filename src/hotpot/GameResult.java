@@ -38,12 +38,15 @@ public class GameResult {
 		}
 			
 	}
+	
 	public int getSumCal() {
 		return sumCal;
 	}
+	
 	public int getSumPrice() {
 		return sumPrice;
 	}
+	
 	public String getFoodMost (int state) {
 		String Max="beef";
 		if(sumBeef[state]<sumChicken[state]) {
