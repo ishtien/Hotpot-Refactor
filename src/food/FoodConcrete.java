@@ -1,6 +1,8 @@
 package food;
 
 import javax.swing.ImageIcon;
+import food.ConstantData;
+
 
 import resource.GetResource;
 
