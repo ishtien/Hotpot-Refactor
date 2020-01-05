@@ -34,6 +34,7 @@ public class TakeFoodFromHotpot implements Packet {
 		obj.packet[indexFoodID] = (byte)foodID;
 		return obj;
 	}
+	
 	public static boolean isPacketValid(byte[] packet, int offset, int maxLength) {
 		int index = offset;
 		

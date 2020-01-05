@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import resource.GetResource;
+import ui.StartGameUI;
 
 public class Main {
 	

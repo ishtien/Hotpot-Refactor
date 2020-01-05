@@ -48,6 +48,7 @@ public class GameServerHandler {
 			return false;
 		return socketList[index] != null && socketList[index].isConnected();
 	}
+	
 	private int listCount()
 	{
 		int counter = 0;
