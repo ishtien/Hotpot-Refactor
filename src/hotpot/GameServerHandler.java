@@ -52,27 +52,27 @@ public class GameServerHandler {
 	private int listCount()
 	{
 		int counter = 0;
-		for (int i = 0; i < socketList.length; ++i)
-			if (checkClientConnection(i))
+		for (int idx = 0; idx < socketList.length; ++idx)
+			if (checkClientConnection(idx))
 				counter++;
 			else
-				socketList[i] = null;
+				socketList[idx] = null;
 		return counter;
 	}
 	
 	private void insertSocket(Socket sock) throws Exception
 	{
-		int i = 0;
+		int idx = 0;
 		if (listCount() >= socketList.length)
 			return;
-		while (checkClientConnection(i) && i < socketList.length)
-			i++;
-		if (i >= socketList.length)
+		while (checkClientConnection(idx) && idx < socketList.length)
+			idx++;
+		if (idx >= socketList.length)
 			return;
-		socketList[i] = sock;
-		inputStream[i] = sock.getInputStream();
-		outputStream[i] = new BufferedOutputStream(sock.getOutputStream());
-		startReceive(new Integer(i));
+		socketList[idx] = sock;
+		inputStream[idx] = sock.getInputStream();
+		outputStream[idx] = new BufferedOutputStream(sock.getOutputStream());
+		startReceive(new Integer(idx));
 	}
 	
 	private void sendPacketToTarget(int targetID, Packet packet)
@@ -90,11 +90,11 @@ public class GameServerHandler {
 	{
 		if (packet == null)
 			return;
-		for (int j = 0; j < socketList.length; ++j)
-			if (senderID == j)
+		for (int idx = 0; idx < socketList.length; ++idx)
+			if (senderID == idx)
 				continue;
-			else if (checkClientConnection(j))
-				sendPacketToTarget(j, packet);
+			else if (checkClientConnection(idx))
+				sendPacketToTarget(idx, packet);
 	}
 	
 	private void parsePacket(int userID, byte[] packet, int size)
@@ -138,31 +138,31 @@ public class GameServerHandler {
 	private void startReceive(Integer index)
 	{
 		new Thread(() -> {
-			int i = index.intValue();
+			int idx = index.intValue();
 			byte[] tempArray = new byte[1024];
 			
 			try
 			{
-				outputStream[i].write(i);
+				outputStream[idx].write(idx);
 				
 				for (int j = 0; j < socketList.length; ++j)
 				{
 					//Sync Others Name
-					if (i == j)
+					if (idx == j)
 						continue;
 					if (!checkClientConnection(j))
 						continue;
-					sendPacketToTarget(i, TellNamePacket.createPacket(j, status.getPlayerName(j)));
+					sendPacketToTarget(idx, TellNamePacket.createPacket(j, status.getPlayerName(j)));
 				}
 				
-				while (checkClientConnection(i))
+				while (checkClientConnection(idx))
 				{
-					outputStream[i].flush();
-					if (inputStream[i].available() > 0)
+					outputStream[idx].flush();
+					if (inputStream[idx].available() > 0)
 					{
-						int readSize = inputStream[i].read(tempArray);
+						int readSize = inputStream[idx].read(tempArray);
 						if (readSize > 0)
-							parsePacket(i, tempArray, readSize);
+							parsePacket(idx, tempArray, readSize);
 					}
 					Thread.sleep(1);
 				}

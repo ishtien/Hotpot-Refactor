@@ -38,9 +38,9 @@ public class GameStatus {
 	
 	synchronized public int getFreeRoomInHotpot()
 	{
-		for (int i = 0; i < roomInHotpot; ++i)
-			if (!isCooking[i])
-				return i;
+		for (int idx = 0; idx < roomInHotpot; ++idx)
+			if (!isCooking[idx])
+				return idx;
 		return -1;
 	}
 	
@@ -67,7 +67,7 @@ public class GameStatus {
 			return;
 
 		if (hotpot != null)
-			hotpot.foodTakeAwayFromHotpot(index, getHotpotItemID(index), sender, (int)getHotpotItemCookTime(index));
+			hotpot.takeAwayFoodFromHotpot(index, getHotpotItemID(index), sender, (int)getHotpotItemCookTime(index));
 		freeHotpotRoom(index);
 	}
 	

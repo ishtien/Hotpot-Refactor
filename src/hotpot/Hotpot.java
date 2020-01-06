@@ -404,7 +404,7 @@ public class Hotpot {
 		btn.moveTo((int)positionHotpot[roomID][0], (int)positionHotpot[roomID][1], 300, false);
 	}
 	
-	public void foodTakeAwayFromHotpot(int roomID, int foodID, int targetUserID, int cookedTime)
+	public void takeAwayFoodFromHotpot(int roomID, int foodID, int targetUserID, int cookedTime)
 	{
 		int index = targetUserID;
 		if (targetUserID != userID)

@@ -1,6 +1,7 @@
 package hotpot;
 
 import java.util.Dictionary;
+import food.ConstantData;
 
 public class GameResult {
 	private int sumCal;
@@ -23,17 +24,17 @@ public class GameResult {
 		sumCal += cal;
 		sumPrice += price;
 		switch(food) {
-			case "牛肉":sumBeef[state]++;break;
-			case "雞肉":sumChicken[state]++;break;
-			case "蛋餃":sumEggdump[state]++;break;
-			case "魚肉":sumFish[state]++;break;
-			case "魚蛋":sumFishegg[state]++;break;
-			case "高麗菜":sumLettuce[state]++;break;
-			case "香菇":sumMushroom[state]++;break;
-			case "豬肉":sumPig[state]++;break;
-			case "年糕":sumRicecake[state]++;break;
-			case "青菜":sumVeg[state]++;break;
-			case "鑫鑫腸":sumWurst[state]++;break;
+			case ConstantData.beefName:sumBeef[state]++;break;
+			case ConstantData.chickenName:sumChicken[state]++;break;
+			case ConstantData.eggdumpName:sumEggdump[state]++;break;
+			case ConstantData.fishName:sumFish[state]++;break;
+			case ConstantData.fisheggName:sumFishegg[state]++;break;
+			case ConstantData.lettuceName:sumLettuce[state]++;break;
+			case ConstantData.mushroomName:sumMushroom[state]++;break;
+			case ConstantData.pigName:sumPig[state]++;break;
+			case ConstantData.ricecakeName:sumRicecake[state]++;break;
+			case ConstantData.vegName:sumVeg[state]++;break;
+			case ConstantData.wurstName:sumWurst[state]++;break;
 			default: break;
 		}
 			

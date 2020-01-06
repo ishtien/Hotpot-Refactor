@@ -25,7 +25,7 @@ public class GameUI<T extends JComponent> {
 	private boolean disposeAfterMove;
 	Thread moveThread;
 	
-	private void moveTo_blocking()
+	private void moveToBlocking()
 	{
 		double startX = compoent.getX();
 		double startY = compoent.getY();
@@ -77,7 +77,7 @@ public class GameUI<T extends JComponent> {
 		intervel = millis;
 		this.disposeAfterMove = disposeAfterMove;
 		
-		moveThread = new Thread(() -> { moveTo_blocking(); });
+		moveThread = new Thread(() -> { moveToBlocking(); });
 		moveThread.run();
 		return this;
 	}
