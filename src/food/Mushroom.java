@@ -15,9 +15,9 @@ public class Mushroom extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.mushroomName;
-	private static int cal = 40;
-	private static int gram = 100;
-	private static int price = 99;
+	private static int cal = ConstantData.mushroomCal;
+	private static int gram = ConstantData.mushroomGram;
+	private static int price = ConstantData.mushroomPrice;
 	
 	public Mushroom() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

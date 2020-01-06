@@ -15,9 +15,9 @@ public class Ricecake extends FoodConcrete{
 	private static int transferState[] = {30000, 120000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.ricecakeName;
-	private static int cal = 80;
-	private static int gram = 60;
-	private static int price = 55;
+	private static int cal = ConstantData.ricecakeCal;
+	private static int gram = ConstantData.ricecakeGram;
+	private static int price = ConstantData.ricecakePrice;
 	
 	public Ricecake() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

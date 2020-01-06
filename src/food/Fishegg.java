@@ -15,9 +15,9 @@ public class Fishegg extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.fisheggName;
-	private static int cal = 36;
-	private static int gram = 30;
-	private static int price = 45;
+	private static int cal = ConstantData.fisheggCal;
+	private static int gram = ConstantData.fisheggGram;
+	private static int price = ConstantData.fisheggPrice;
 	
 	public Fishegg() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

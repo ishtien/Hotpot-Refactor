@@ -16,9 +16,9 @@ public class Beef extends FoodConcrete{
 	private static Food sauce = null;
 	
 	private static String name = ConstantData.beefName;
-	private static int cal = 25;
-	private static int gram = 20;
-	private static int price = 15;
+	private static int cal = ConstantData.beefCal;
+	private static int gram = ConstantData.beefGram;
+	private static int price = ConstantData.beefPrice;
 	
 	public Beef() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

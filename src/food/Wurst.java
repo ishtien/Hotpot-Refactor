@@ -15,9 +15,9 @@ public class Wurst extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.wurstName;
-	private static int cal = 25;
-	private static int gram = 20;
-	private static int price = 120;
+	private static int cal = ConstantData.wurstCal;
+	private static int gram = ConstantData.wurstGram;
+	private static int price = ConstantData.wurstPrice;
 	
 	public Wurst() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

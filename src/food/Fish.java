@@ -15,9 +15,9 @@ public class Fish extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.fishName;
-	private static int cal = 25;
-	private static int gram = 20;
-	private static int price = 120;
+	private static int cal = ConstantData.fishCal;
+	private static int gram = ConstantData.fishGram;
+	private static int price = ConstantData.fishPrice;
 	
 	public Fish() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

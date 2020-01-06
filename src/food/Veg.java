@@ -15,9 +15,9 @@ public class Veg extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.vegName;
-	private static int cal = 15;
-	private static int gram = 50;
-	private static int price = 10;
+	private static int cal = ConstantData.vegCal;
+	private static int gram = ConstantData.vegGram;
+	private static int price = ConstantData.vegPrice;
 	
 	public Veg() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

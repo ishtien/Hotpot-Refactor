@@ -15,9 +15,9 @@ public class Lettuce extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.lettuceName;
-	private static int cal = 9;
-	private static int gram = 33;
-	private static int price = 69;
+	private static int cal = ConstantData.lettuceCal;
+	private static int gram = ConstantData.lettuceGram;
+	private static int price = ConstantData.lettucePrice;
 	
 	public Lettuce() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

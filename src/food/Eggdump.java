@@ -15,9 +15,9 @@ public class Eggdump extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.eggdumpName;
-	private static int cal = 78;
-	private static int gram = 36;
-	private static int price = 50;
+	private static int cal = ConstantData.eggdumpCal;
+	private static int gram = ConstantData.eggdumpGram;
+	private static int price = ConstantData.eggdumpPrice;
 	
 	public Eggdump() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

@@ -15,9 +15,9 @@ public class Chicken extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.chickenName;
-	private static int cal = 50;
-	private static int gram = 20;
-	private static int price = 8;
+	private static int cal = ConstantData.chickenCal;
+	private static int gram = ConstantData.chickenGram;
+	private static int price = ConstantData.chickenPrice;
 	
 	public Chicken() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);

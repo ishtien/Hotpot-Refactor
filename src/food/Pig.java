@@ -15,9 +15,9 @@ public class Pig extends FoodConcrete{
 	private static int transferState[] = {6000, 30000, Integer.MAX_VALUE};
 	private static Food sauce = null;
 	private static String name = ConstantData.pigName;
-	private static int cal = 25;
-	private static int gram = 20;
-	private static int price = 120;
+	private static int cal = ConstantData.pigCal;
+	private static int gram = ConstantData.pigGram;
+	private static int price = ConstantData.pigPrice;
 	
 	public Pig() {
 		super(icons, iconUI, transferState, sauce, name, cal, gram, price);
