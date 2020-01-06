@@ -20,75 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class GameUI<T extends JComponent> {
-	private T compoent;
-	private int targetX, targetY, intervel;
-	private boolean disposeAfterMove;
-	Thread moveThread;
-	
-	private void moveToBlocking()
-	{
-		double startX = compoent.getX();
-		double startY = compoent.getY();
-		double deltaX = (targetX - startX) / (double)intervel;
-		double deltaY = (targetY - startY) / (double)intervel;
-		int deltaTime = Math.min(intervel / 100,  16);
-		if (deltaTime == 0)
-			deltaTime = 1;
-		int timeStamp = 0;
-		
-		while (timeStamp < intervel && moveThread != null)
-		{
-			try
-			{
-				int X = (int)(startX + deltaX * timeStamp);
-				int Y = (int)(startY + deltaY * timeStamp);
-				compoent.setLocation(X, Y);
-				timeStamp += deltaTime;
-				Thread.sleep(deltaTime);
-			}catch (Exception e)
-			{
-				
-			}
-		}
-		if (disposeAfterMove)
-		{
-			this.dispose();
-			moveThread = null;
-			return;
-		}
-		compoent.setLocation(targetX, targetY);
-		moveThread = null;
-	}
-	public GameUI<T> moveTo(int X, int Y, int millis, boolean disposeAfterMove)
-	{
-		if (moveThread != null)
-		{
-			Thread temp = moveThread;
-			moveThread = null;
-			temp.interrupt();
-			try {
-				temp.join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		targetX = X;
-		targetY = Y;
-		intervel = millis;
-		this.disposeAfterMove = disposeAfterMove;
-		
-		moveThread = new Thread(() -> { moveToBlocking(); });
-		moveThread.run();
-		return this;
-	}
-	
-	public GameUI<?> moveTo(GameUI<?> obj, int millis, boolean disposeAfterMove)
-	{
-		Point location = obj.compoent.getLocationOnScreen();
-		Dimension dimension = obj.compoent.getSize();
-		return moveTo(location.x + dimension.width / 4, location.y + 10, millis, disposeAfterMove);
-	}
-	
+	private T compoent;	
 	public GameUI(T obj)
 	{
 		compoent = obj;
@@ -99,6 +31,35 @@ public class GameUI<T extends JComponent> {
 		return compoent;
 	}
 	
+	public static GameUI<JButton> createButton(ImageIcon image)
+	{
+		return new GameUI<JButton>(new JButton(image)); 
+	}
+	
+	public static GameUI<JButton> createButtonString(String string)
+	{
+		return new GameUI<JButton>(new JButton(string)); 
+	}
+	
+	public static GameUI<JTextField> createTextField(String string)
+	{
+		return new GameUI<JTextField>(new JTextField(string)); 
+	}
+	
+	public static GameUI<JPanel> createPanel()
+	{
+		return new GameUI<>(new JPanel());
+	}
+	
+	public static GameUI<JLabel> createLabel(ImageIcon image)
+	{
+		return new GameUI<JLabel>(new JLabel(image)); 
+	}
+	
+	public static GameUI<JLabel> createLabelString(String string)
+	{
+		return new GameUI<JLabel>(new JLabel(string)); 
+	}
 
 	public GameUI<T> setBorder(EmptyBorder border)
 	{
@@ -307,34 +268,75 @@ public class GameUI<T extends JComponent> {
 		compoent = null;
 	}
 	
-	public static GameUI<JButton> createButton(ImageIcon image)
+
+	
+	private int targetX, targetY, intervel;
+	private boolean disposeAfterMove;
+	Thread moveThread;
+	
+	private void moveToBlocking()
 	{
-		return new GameUI<JButton>(new JButton(image)); 
+		double startX = compoent.getX();
+		double startY = compoent.getY();
+		double deltaX = (targetX - startX) / (double)intervel;
+		double deltaY = (targetY - startY) / (double)intervel;
+		int deltaTime = Math.min(intervel / 100,  16);
+		if (deltaTime == 0)
+			deltaTime = 1;
+		int timeStamp = 0;
+		
+		while (timeStamp < intervel && moveThread != null)
+		{
+			try
+			{
+				int X = (int)(startX + deltaX * timeStamp);
+				int Y = (int)(startY + deltaY * timeStamp);
+				compoent.setLocation(X, Y);
+				timeStamp += deltaTime;
+				Thread.sleep(deltaTime);
+			}catch (Exception e)
+			{
+				
+			}
+		}
+		if (disposeAfterMove)
+		{
+			this.dispose();
+			moveThread = null;
+			return;
+		}
+		compoent.setLocation(targetX, targetY);
+		moveThread = null;
+	}
+	public GameUI<T> moveTo(int X, int Y, int millis, boolean disposeAfterMove)
+	{
+		if (moveThread != null)
+		{
+			Thread temp = moveThread;
+			moveThread = null;
+			temp.interrupt();
+			try {
+				temp.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		targetX = X;
+		targetY = Y;
+		intervel = millis;
+		this.disposeAfterMove = disposeAfterMove;
+		
+		moveThread = new Thread(() -> { moveToBlocking(); });
+		moveThread.run();
+		return this;
 	}
 	
-	public static GameUI<JButton> createButtonString(String string)
+	public GameUI<?> moveTo(GameUI<?> obj, int millis, boolean disposeAfterMove)
 	{
-		return new GameUI<JButton>(new JButton(string)); 
+		Point location = obj.compoent.getLocationOnScreen();
+		Dimension dimension = obj.compoent.getSize();
+		return moveTo(location.x + dimension.width / 4, location.y + 10, millis, disposeAfterMove);
 	}
 	
-	public static GameUI<JTextField> createTextField(String string)
-	{
-		return new GameUI<JTextField>(new JTextField(string)); 
-	}
-	
-	public static GameUI<JPanel> createPanel()
-	{
-		return new GameUI<>(new JPanel());
-	}
-	
-	public static GameUI<JLabel> createLabel(ImageIcon image)
-	{
-		return new GameUI<JLabel>(new JLabel(image)); 
-	}
-	
-	public static GameUI<JLabel> createLabelString(String string)
-	{
-		return new GameUI<JLabel>(new JLabel(string)); 
-	}
 	
 }

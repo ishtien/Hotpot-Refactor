@@ -14,7 +14,7 @@ import resource.GetResource;
 
 public class StartGameUI {
 	Hotpot hotpot;
-	boolean isStartScanning = false;
+	private boolean isStartScanning = false;
 	private JFrame frame = new JFrame();
 	private GameUI<JPanel> startPane;
 	private GameUI<JLabel> nameTitle;

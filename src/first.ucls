@@ -75,7 +75,7 @@
   </class>  
   <interface id="9" language="java" name="food.Food" project="HotpotTest" file="/HotpotTest/src/food/Food.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1822" y="-83"/>    
+    <position height="-1" width="-1" x="1479" y="-54"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,23 +111,14 @@
   </class>  
   <class id="13" language="java" name="ui.ResultUI" project="HotpotTest" file="/HotpotTest/src/ui/ResultUI.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="136" width="309" x="1226" y="1716"/>    
+    <position height="-1" width="-1" x="1155" y="1727"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="hotpot.Hotpot.ExitAdapter" project="HotpotTest" 
-    file="/HotpotTest/src/hotpot/Hotpot.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="269" x="1640" y="940"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="hotpot.GameStatus" project="HotpotTest" 
+  <class id="14" language="java" name="hotpot.GameStatus" project="HotpotTest" 
     file="/HotpotTest/src/hotpot/GameStatus.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="396" width="254" x="2281" y="1716"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -136,25 +127,25 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="ui.GameUI" project="HotpotTest" file="/HotpotTest/src/ui/GameUI.java" 
+  <class id="15" language="java" name="ui.GameUI" project="HotpotTest" file="/HotpotTest/src/ui/GameUI.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="736" width="353" x="1247" y="940"/>    
+    <position height="-1" width="-1" x="1679" y="1505"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="hotpot.Main" project="HotpotTest" file="/HotpotTest/src/hotpot/Main.java" 
+  <class id="16" language="java" name="hotpot.Main" project="HotpotTest" file="/HotpotTest/src/hotpot/Main.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="136" width="200" x="1490" y="48"/>    
+    <position height="-1" width="-1" x="2016" y="-118"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="hotpot.GameServerHandler" project="HotpotTest" 
+  <class id="17" language="java" name="hotpot.GameServerHandler" project="HotpotTest" 
     file="/HotpotTest/src/hotpot/GameServerHandler.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="316" width="290" x="1970" y="940"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -163,34 +154,25 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="hotpot.GameResult" project="HotpotTest" 
+  <class id="18" language="java" name="hotpot.GameResult" project="HotpotTest" 
     file="/HotpotTest/src/hotpot/GameResult.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="536" width="215" x="1930" y="1716"/>    
+    <position height="-1" width="-1" x="1934" y="1904"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="hotpot.LanDeviceSearch" project="HotpotTest" 
+  <class id="19" language="java" name="hotpot.LanDeviceSearch" project="HotpotTest" 
     file="/HotpotTest/src/hotpot/LanDeviceSearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="336" width="259" x="1341" y="224"/>    
+    <position height="-1" width="-1" x="1731" y="58"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="hotpot.Hotpot" project="HotpotTest" file="/HotpotTest/src/hotpot/Hotpot.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="676" width="330" x="1640" y="224"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="22" language="java" name="network.AddFoodToHotpot" project="HotpotTest" 
+  <class id="20" language="java" name="network.AddFoodToHotpot" project="HotpotTest" 
     file="/HotpotTest/src/network/AddFoodToHotpot.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="356" width="338" x="987" y="437"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -199,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="network.TellNamePacket" project="HotpotTest" 
+  <class id="21" language="java" name="network.TellNamePacket" project="HotpotTest" 
     file="/HotpotTest/src/network/TellNamePacket.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="336" width="323" x="1365" y="437"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,7 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="24" language="java" name="network.Packet" project="HotpotTest" 
+  <interface id="22" language="java" name="network.Packet" project="HotpotTest" 
     file="/HotpotTest/src/network/Packet.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="136" width="243" x="1365" y="833"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -217,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="25" language="java" name="network.TakeFoodFromHotpot" project="HotpotTest" 
+  <class id="23" language="java" name="network.TakeFoodFromHotpot" project="HotpotTest" 
     file="/HotpotTest/src/network/TakeFoodFromHotpot.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="356" width="363" x="1728" y="437"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,306 +208,198 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="26">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="19"/>  
-  </dependency>  
-  <dependency id="27">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="28">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="29" name="sauce"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
+  <association id="24">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="25" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="31">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="20"/>  
-  </dependency>  
-  <association id="32">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="33" name="contentPane"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="35">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="36" name="sauce"/>      
-      <multiplicity id="37" minimum="0" maximum="1"/>    
+  <association id="27">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="28" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="29" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="38">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <dependency id="39">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
+  <association id="30">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="31" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="32" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="33">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <association id="34">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="35" name="status">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="38" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="39" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="40">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="41" name="foodInterfaceList"/>      
-      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="41" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="43">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="44" name="sauce"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="44" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="45" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="47" name="status"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
+  <dependency id="46">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="47">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="48" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="49">    
-    <bendpoint x="2290" y="940"/>    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="50" name="status"/>      
-      <multiplicity id="51" minimum="0" maximum="1"/>    
+  <realization id="50">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <association id="51">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="52" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="53" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="52">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="53">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="18"/>  
-  </dependency>  
   <dependency id="54">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="15"/>  
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="19"/>  
   </dependency>  
   <dependency id="55">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="2"/>  
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="14"/>  
   </dependency>  
   <association id="56">    
-    <bendpoint x="2311" y="940"/>    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="57" name="hotpot"/>      
-      <multiplicity id="58" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="59">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="60" name="allPanel"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="63" name="foodUIButtonList"/>      
-      <multiplicity id="64" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="65">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="24"/>  
-  </realization>  
-  <association id="66">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="67" name="sauce"/>      
-      <multiplicity id="68" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="69">    
     <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="70" name="sauce"/>      
-      <multiplicity id="71" minimum="0" maximum="1"/>    
+      <attribute id="57" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="58" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="72">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="24"/>  
+  <dependency id="59">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="23"/>  
   </dependency>  
-  <nesting id="73">    
+  <dependency id="60">    
     <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="14"/>  
-  </nesting>  
-  <dependency id="74">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="15"/>  
   </dependency>  
-  <association id="75">    
+  <association id="61">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="76" name="sauce"/>      
-      <multiplicity id="77" minimum="0" maximum="1"/>    
+      <attribute id="62" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="63" minimum="0" maximum="1">        
+        <position height="20" width="31" x="1586" y="249"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="78">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="79" name="otherPlayerPart"/>      
-      <multiplicity id="80" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="81">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="24"/>  
+  <dependency id="64">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <realization id="65">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="22"/>  
   </realization>  
-  <dependency id="82">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="4"/>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="20"/>  
   </dependency>  
-  <association id="83">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="84" name="sauce"/>      
-      <multiplicity id="85" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="86">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="8"/>  
+  <dependency id="67">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="21"/>  
   </dependency>  
-  <dependency id="87">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <association id="88">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="89" name="sauce"/>      
-      <multiplicity id="90" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="91">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="92" name="foodPlateButtonList"/>      
-      <multiplicity id="93" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="94">    
-    <bendpoint x="1939" y="940"/>    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="95" name="result"/>      
-      <multiplicity id="96" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="97">    
-    <end type="SOURCE" refId="18"/>    
+  <dependency id="68">    
+    <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="22"/>  
   </dependency>  
-  <association id="98">    
-    <bendpoint x="1216" y="940"/>    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="99" name="Rframe"/>      
-      <multiplicity id="100" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="101">    
+  <association id="69">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="102" name="sauce"/>      
-      <multiplicity id="103" minimum="0" maximum="1"/>    
+      <attribute id="70" name="sauce">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-343" y="29"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="104">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <association id="105">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="106" name="sauce"/>      
-      <multiplicity id="107" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="108">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
-  <dependency id="109">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <dependency id="110">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="23"/>  
-  </dependency>  
-  <dependency id="111">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="23"/>  
-  </dependency>  
-  <dependency id="112">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <dependency id="113">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="114">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <realization id="115">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="24"/>  
-  </realization>  
-  <association id="116">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="117" name="sauce"/>      
-      <multiplicity id="118" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="119">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="120" name="hotpotButton"/>      
-      <multiplicity id="121" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="122">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="25"/>  
-  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

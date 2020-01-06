@@ -17,9 +17,7 @@ public class GameResult {
 	private int []sumRicecake = new int[3];
 	private int []sumVeg = new int[3];
 	private int []sumWurst = new int[3];
-	int [] CookedMost = new int [11];
-	int [] RawMost = new int [11];
-	int [] FuckMost = new int [11];
+
 	public void setInfo(int cal,int price,String food,int state) {
 		sumCal += cal;
 		sumPrice += price;
