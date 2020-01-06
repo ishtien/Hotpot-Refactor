@@ -50,6 +50,17 @@ public class StartGameUI {
 		
 		startPane.add(background);
 		
+		this.AddStartGameListener(lanDeviceSearch);
+		
+		
+		frame.add(startPane.getObject());
+		startPane.add(nameTitle);
+		startPane.add(textTitle);
+		startPane.add(searchButton);
+		frame.setVisible(true);
+	}
+
+	private void AddStartGameListener(LanDeviceSearch lanDeviceSearch) {
 		searchButton.addActionListener(e -> 
 		{
 			searchButton.getObject().setEnabled(false);
@@ -85,11 +96,5 @@ public class StartGameUI {
 			
 		});
 		
-		frame.add(startPane.getObject());
-		startPane.add(nameTitle);
-		startPane.add(textTitle);
-		startPane.add(searchButton);
-		frame.setVisible(true);
 	}
-
 }

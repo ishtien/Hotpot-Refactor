@@ -35,21 +35,31 @@ public class ResultUI extends JFrame {
 				.setBounds(100, 100, 800, 600)
 				.setLayout(new BorderLayout(0, 0))
 				.setLayout(null);
-
 		setContentPane(contentPane.getObject());
 
+		this.showBackground();
+		this.showPlayerNickname(nickname);
+		this.showCalAndPrice(cal, price);		
+		this.showHungerState(cal);
+		this.showHungerFoodImg(rankImg1,rankImg2,rankImg3);
+		this.showHungerFoodTitle();
+	}
+	private void showBackground() {
 		backgroundPane = GameUI.createPanel()
 				.setBackground(new Color(254,244,173))
 				.setBounds(0, 0, 800, 600)
 				.setLayout(null);
 		contentPane.add(backgroundPane, BorderLayout.CENTER);
-
+	}
+	private void showPlayerNickname(String nickname) {
 		nickName = GameUI.createLabelString(nickname)
 				.setFont("微軟正黑體")
 				.setBounds(302, 34, 329, 85);
 		
 		backgroundPane.add(nickName);
 		
+	}
+	private void showCalAndPrice(int cal,int price) {
 		calInfo = GameUI.createLabelString("你今天總共吃了"+cal+"Kcal的食物")
 				.setFont("新細明體")
 				.setBounds(100, 187, 388, 54);
@@ -61,7 +71,9 @@ public class ResultUI extends JFrame {
 				.setBounds(100, 249, 272, 43);
 
 		backgroundPane.add(priceInfo);
-		
+	}
+	
+	private void showHungerState(int cal) {
 		if(cal >=1500) {
 			hungerIcon = GameUI.createLabel(GetResource.createImage("good.png", 312,234));
 		} else if(cal<1500 && cal>=800) {
@@ -72,7 +84,9 @@ public class ResultUI extends JFrame {
 		
 		hungerIcon.setBounds(400, 140, 312,234);
 		backgroundPane.add(hungerIcon);
-		
+	}
+	
+	private void showHungerFoodImg(String rankImg1,String rankImg2,String rankImg3) {
 		rankListImg[0] = GameUI.createLabel(GetResource.createImage(rankImg1, 50,50))
 				.setBounds(70, 430, 50, 50);
 		rankListImg[1] = GameUI.createLabel(GetResource.createImage(rankImg2, 50,50))
@@ -82,8 +96,9 @@ public class ResultUI extends JFrame {
 		backgroundPane.add(rankListImg[0]);
 		backgroundPane.add(rankListImg[1]);
 		backgroundPane.add(rankListImg[2]);
-		
-		
+	}
+	
+	private void showHungerFoodTitle() {
 		rankListString[0] = GameUI.createLabelString("吃最多的生食!")
 				.setBounds(60, 385, 100, 50);
 		rankListString[1] = GameUI.createLabelString("吃最多將將好的食物！")
@@ -93,7 +108,6 @@ public class ResultUI extends JFrame {
 		backgroundPane.add(rankListString[0]);
 		backgroundPane.add(rankListString[1]);
 		backgroundPane.add(rankListString[2]);
-
 	}
 
 }

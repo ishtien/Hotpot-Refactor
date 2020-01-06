@@ -80,7 +80,7 @@ public class GameResult {
 		}
 	}
 
-	public String getHunger() {
+	public String getHungerState() {
 		if(sumCal > 1500) {
 			return "飽飽的";
 		}else if(sumCal <=1500 && sumCal > 800) {
