@@ -6,9 +6,9 @@ import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import network.AddFoodToHotpot;
+import network.AddFoodToHotpotHandler;
 import network.Packet;
-import network.TakeFoodFromHotpot;
+import network.TakeFoodFromHotpotHandler;
 import network.TellNamePacket;
 
 public class GameServerHandler {
@@ -112,11 +112,11 @@ public class GameServerHandler {
 			Packet p;
 			switch (type)
 			{
-				case AddFoodToHotpot.ID:
-					p = AddFoodToHotpot.createPacket(packet, offset, size);
+				case AddFoodToHotpotHandler.ID:
+					p = AddFoodToHotpotHandler.createPacket(packet, offset, size);
 					break;
-				case TakeFoodFromHotpot.ID:
-					p = TakeFoodFromHotpot.createPacket(packet, offset, size);
+				case TakeFoodFromHotpotHandler.ID:
+					p = TakeFoodFromHotpotHandler.createPacket(packet, offset, size);
 					break;
 				case TellNamePacket.ID:
 					p = TellNamePacket.createPacket(packet, offset, size);

@@ -20,9 +20,9 @@ import javax.swing.border.EmptyBorder;
 
 import food.*;
 
-import network.AddFoodToHotpot;
+import network.AddFoodToHotpotHandler;
 import network.Packet;
-import network.TakeFoodFromHotpot;
+import network.TakeFoodFromHotpotHandler;
 import network.TellNamePacket;
 import resource.GetResource;
 import ui.GameUI;
@@ -262,11 +262,11 @@ public class Hotpot {
 						Packet p;
 						switch (type)
 						{
-							case AddFoodToHotpot.ID:
-								p = AddFoodToHotpot.createPacket(tempArray, offset, readSize);
+							case AddFoodToHotpotHandler.ID:
+								p = AddFoodToHotpotHandler.createPacket(tempArray, offset, readSize);
 								break;
-							case TakeFoodFromHotpot.ID:
-								p = TakeFoodFromHotpot.createPacket(tempArray, offset, readSize);
+							case TakeFoodFromHotpotHandler.ID:
+								p = TakeFoodFromHotpotHandler.createPacket(tempArray, offset, readSize);
 								break;
 							case TellNamePacket.ID:
 								p = TellNamePacket.createPacket(tempArray, offset, readSize);
@@ -355,7 +355,7 @@ public class Hotpot {
 			JButton btn = (JButton)e.getSource();
 			Integer roomID = (Integer)btn.getClientProperty("RoomID");
 			Integer foodID = (Integer)btn.getClientProperty("FoodID");
-			Packet packet = TakeFoodFromHotpot.createPacket(userID, roomID, foodID);
+			Packet packet = TakeFoodFromHotpotHandler.createPacket(userID, roomID, foodID);
 			try {
 				outputStream.write(packet.toArray());
 			} catch (IOException exception) {
@@ -376,7 +376,7 @@ public class Hotpot {
 			Integer id = (Integer) btn.getClientProperty("ID");
 			int foodID = id.intValue();
 			try {
-				outputStream.write(AddFoodToHotpot.createPacket(userID, roomInHotpot, foodID).toArray());
+				outputStream.write(AddFoodToHotpotHandler.createPacket(userID, roomInHotpot, foodID).toArray());
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}

@@ -3,8 +3,8 @@ package network;
 import hotpot.GameStatus;
 
 //00 Type UserID Length_Low Length_High HotpotRoomID HotpotFoodID 00
-public class AddFoodToHotpot implements Packet {
-	public static final byte ID = 1;
+public class TakeFoodFromHotpotHandler implements Packet {
+	public static final byte ID = 2;
 	private static final int packetLength = 8;
 	private static final int indexUserID = 2;
 	private static final int indexRoomID = 5;
@@ -12,20 +12,20 @@ public class AddFoodToHotpot implements Packet {
 	private static final byte[] packetTemplate = {0, ID, 0, 2, 0, 0, 0, 0};
 	private byte[] packet;
 	
-	public static AddFoodToHotpot createPacket(byte[] packet, int offset, int maxLength)
+	public static TakeFoodFromHotpotHandler createPacket(byte[] packet, int offset, int maxLength)
 	{
 		if (!isPacketValid(packet, offset, maxLength))
 			return null;
-		AddFoodToHotpot obj = new AddFoodToHotpot();
+		TakeFoodFromHotpotHandler obj = new TakeFoodFromHotpotHandler();
 		obj.packet = new byte[packetLength];
 		for (int i = 0; i < packetLength; ++i)
 			obj.packet[i] = packet[offset + i];
 		return obj;
 	}
 	
-	public static AddFoodToHotpot createPacket(byte sendID, int roomID, int foodID)
+	public static TakeFoodFromHotpotHandler createPacket(byte sendID, int roomID, int foodID)
 	{
-		AddFoodToHotpot obj = new AddFoodToHotpot();
+		TakeFoodFromHotpotHandler obj = new TakeFoodFromHotpotHandler();
 		obj.packet = new byte[packetLength];
 		for (int i = 0; i < packetLength; ++i)
 			obj.packet[i] = packetTemplate[i];
@@ -44,7 +44,7 @@ public class AddFoodToHotpot implements Packet {
 			return false;
 		if (packet[index++] != ID)
 			return false;
-		int userID = packet[index++];	//userID is useless here
+		int userID = packet[index++];
 		if (userID < 0 || userID >= GameStatus.playerMaxCount)
 			return false;
 		int length = packet[index++];
@@ -60,7 +60,9 @@ public class AddFoodToHotpot implements Packet {
 			return false;
 		if (status == null)
 			return true;
-		if (status.checkIsCooking(packet[indexRoomID]))
+		if (!status.checkIsCooking(packet[indexRoomID]))
+			return false;
+		if (status.getHotpotItemID(packet[indexRoomID]) != packet[indexFoodID])
 			return false;
 		return true;
 	}
@@ -75,7 +77,7 @@ public class AddFoodToHotpot implements Packet {
 	public void doOperation(GameStatus status) {
 		if (status == null)
 			return;
-		status.putItemIntoHotpot(packet[indexRoomID], packet[indexFoodID]);
+		status.takeFoodAway(packet[indexRoomID], packet[indexUserID]);
 	}
 
 }
